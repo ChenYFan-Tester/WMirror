@@ -28,7 +28,13 @@ const handleerr = async (req, msg) => {
 const handle = async function (req) {
     const urlStr = req.url
     const domain = (urlStr.split('/'))[2]
-    const qdomain = domain.split('.')[0].replace(/\-/g, '.')
+    
+    let qdomain
+    if(domain.indexOf("coderfan.cf")>-1){
+    qdomain = domain.split('.')[0].replace(/\-/g, '.')
+    }else{
+    qdomain=domain
+    }
     //const qdomain = "www.google.com"
     let proxy_url = urlStr.replace(domain, 'cnk.deno.dev')
     const proxy_header = new Headers()
