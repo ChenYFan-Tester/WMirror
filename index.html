@@ -1,0 +1,13 @@
+<h1>Please Wait!</h1>
+<script>
+    window.addEventListener('load', async () => {
+        navigator.serviceWorker.register(`/sw.js?time=${new Date().getTime()}`)
+            .then(async reg => {
+                setTimeout(() => {
+                    window.location.search = `?time=${new Date().getTime()}`
+                }, 200)
+            }).catch(err => {
+                //安装失败，错误信息会由err传参
+            })
+    });
+</script>
