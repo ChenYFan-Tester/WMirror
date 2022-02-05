@@ -36,7 +36,7 @@ const handle = async function (req) {
     qdomain=domain
     }
     //const qdomain = "www.google.com"
-    let proxy_url = urlStr.replace(domain, 'cnk.deno.dev')
+    let proxy_url = urlStr.replace(domain, 'cnk.cyfan.workers.dev')
     const proxy_header = new Headers()
 
     for (let [key, value] of req.headers) {
